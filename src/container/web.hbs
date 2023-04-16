@@ -1,0 +1,76 @@
+<div>
+  {{#with web}}
+      <h1><b>Web:</b></h1>
+        <hr>
+        {{>title data='Languages:'}}
+        <ul>
+         {{#each languages}}
+            Name:<b>{{name}} ({{version}})</b>
+            <p><em>{{description}}</em></p>
+            <br>
+
+         {{>title data='Elements:'}}
+         <ul>
+          {{#each elements}}
+         Name:<b>{{name}}</b>
+          <p><em>{{description}}</em></p>
+          {{/each}}
+         </ul>
+         <br>
+
+         {{>title data='Attributes:'}}
+          <ul>
+          {{#each attributes}}
+          <li>
+            Name:<b>{{name}}</b>
+           <p><em>{{description}}</em></p>
+          </li>
+          {{/each}}
+        </ul>
+
+        {{>title data='Properties'}}
+        <ul>
+          {{#each properties}}
+          <li>
+            Name:<b>{{name}}</b>
+            <p><em>{{description}}</em></p>
+          </li>
+          {{/each}}
+        </ul>
+
+         {{>title data='Values:'}}
+        <ul>
+          {{#each values}}
+          <li>
+            Value:<b>{{value}}</b>
+            <p><em>{{description}}</em></p>
+          </li>
+          {{/each}}
+        </ul>
+
+          {{>title data='Functions:'}}
+        <ul>
+          {{#each functions}}
+          <li>
+            Name:<b>{{name}}</b>
+            <p><em>{{description}}</em></p>
+          </li>
+          {{/each}}
+        </ul>
+       
+           {{>title data='Parameters:'}}
+            <ul>
+          {{#each parameters}}
+          <li>
+            Name:<b>{{name}} ({{type}})</b>
+            <p><em>{{description}}</em></p>
+          </li>
+          {{/each}}
+        </ul>
+
+
+         {{/each}} 
+
+        </ul>
+{{/with}}
+</div>
