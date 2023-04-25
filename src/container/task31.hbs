@@ -170,7 +170,7 @@
     <div class='row col-10'>
       {{#each card}}
         <div class='col-6'>
-          <div class='card'>
+          <div class='card text-bg-warning'>
             <div
               class='card-header text-center'
             >{{header}}</div>
@@ -193,34 +193,34 @@
 
       <div class='row gy-3'>
 
-        <ul class='list-group'>
+        <ul class='col-3'>
           {{#each navigation}}
-            <li class='list-group-item'>
+            <li class='mb-2'>
               <a
                 href='{{link}}'
-                class='btn btn outline-primary'
-              >{{name}}</a>
+                class='btn btn-outline-primary'
+              >{{text}}</a>
             </li>
           {{/each}}
         </ul>
 
-        <ul class='list-group'>
+        <ul class='col-3'>
           {{#each socialMedia}}
-            <li class='list-group-item'>
+            <li class='mb-2'>
               <a
                 href='{{link}}'
-                class='btn btn outline-primary'
+                class='btn btn-outline-primary'
               >{{name}}</a>
             </li>
           {{/each}}
         </ul>
 
-        <ul class='list-group'>
+        <ul class='col-3'>
           {{#each partners}}
-            <li class='list-group-item'>
+            <li class='mb-2'>
               <a
                 href='{{link}}'
-                class='btn btn outline-primary'
+                class='btn btn-outline-primary'
               >{{name}}</a>
             </li>
           {{/each}}
