@@ -99,22 +99,22 @@
                <button class='btn btn-link'>{{text}}</button>
            
               
-                {{#each list_name}}
+               
               <div class='card'>
               <div class='card-body'>
                 <ul>
+                  {{#each list_name}}
                   <li>
-                     <p class="text-muted">{{text}}</p>
-                     <button class='btn btn-link'>{{text}}</button>
+                   
+                     <a href="{{link}}" class='btn btn-link'>{{text}}</a>
                      </li>
+                      {{/each}}
                     </ul>
 
                  </div>
                   </div> 
 
                   <br>
-
-            {{/each}}
           {{/with}}
         
         
