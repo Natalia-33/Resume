@@ -1,0 +1,52 @@
+<div>
+<main>
+  <section>
+    <h1>{{>title big=true data=name}}</h1> 
+  </section>
+  
+ {{#each users}}
+  {{>title big=true data=name}}
+  <p>Gender:{{gender}}</p>
+  <p>Age:{{age}}</p>
+  
+ {{#if friends}}<p><h1>Friends</h1></p> {{/if}}
+ {{#each friends}}
+   <ul>
+    <li><h3>{{name}}</h3></li>
+    <p>Gender:{{gender}}</p>
+     <p>Age:{{age}}</p>
+   </ul>
+
+    {{#if mutual_friends}}<p><h1>Mutual Friends</h1></p> {{/if}}
+    {{#each mutual_friends}}
+   
+   <ul>
+    <li><h3>{{name}}</h3></li>
+    <p>Gender:{{gender}}</p>
+     <p>Age:{{age}}</p>
+   </ul>
+   {{/each}}
+ {{/each}}
+
+{{#if groups}}<p><h1>Groups</h1></p> {{/if}}
+    {{#each groups}}
+   
+   <ul>
+    <li><h3>{{name}}</h3></li>
+    <p><em>{{description}}</em></p>
+   </ul>
+  
+{{#if members}} <p><h1>Members</h1></p>{{/if}}
+       {{#each members}}
+  
+   <ul>
+    <li><h3>{{name}}</h3></li>
+   <p>Gender:{{gender}}</p>
+   <p>Age:{{age}}</p>
+   </ul>
+      {{/each}}
+
+  {{/each}}
+{{/each}}
+</main>
+</div>
