@@ -10,9 +10,69 @@
       {{page.title}}
     </title>
     <meta charset='utf-8' />
+<<<<<<< HEAD
     <link href='css/normalize.css' rel='stylesheet' />
 
     <link href='css/index.css' rel='stylesheet' />
+=======
+    <link href='css/index.css' rel='stylesheet' />
+<<<<<<< HEAD
+  </head>
+
+  <body>
+  {{#with header}}
+    <header>
+      <div>
+        <h1>{{name.firstname}} {{name.lastname}}</h1>
+      </div>
+      <div>
+        <b>{{position}}</b>
+      </div>
+      <br />
+      <div>
+        <em>{{salary}}</em>
+      </div>
+      <br>
+      <div>
+        <address>{{address}}</address>
+      </div>
+      <br />
+      <hr />
+    </header>
+{{/with}}
+
+ {{> nav}}
+ 
+    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
+    {{{body}}}
+
+{{#with footer}}
+    <footer>
+      <hr />
+      <br />
+      <div>
+        {{#with social}}
+          {{> link text=email.text href=email.href blank=true }}
+          {{> link text=phone.text href=phone.href blank=true }}
+          {{> link text=linkedin.text href=linkedin.href blank=true }}
+        {{/with}}
+        </div>
+        <br>
+        <div>
+          <em>Copyright by {{../header/name/firstname}}  {{../header/name/lastname}}</em>
+        </div>
+        <br>
+        <div>
+          <address>
+            {{../header/address}}
+          </address>
+        </div>
+    </footer>
+  {{/with}}
+  </body>
+  
+=======
+>>>>>>> 0cbc9656093472d401d5d047c57ebe2b3dadcc95
 
     <link
       href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css'
@@ -20,6 +80,7 @@
       integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD'
       crossorigin='anonymous'
     />
+<<<<<<< HEAD
     {{!  ↓  підключаємо іконки bootstrap   }}
     <link
       rel='stylesheet'
@@ -34,12 +95,15 @@
 
     <link href='css/style.css' rel='stylesheet' />
 
+=======
+>>>>>>> 0cbc9656093472d401d5d047c57ebe2b3dadcc95
   </head>
 
   <body>
 
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
     {{{body}}}
+<<<<<<< HEAD
     <script
       src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js'
     ></script>
@@ -48,5 +112,13 @@
       crossorigin='anonymous'
     ></script>
   </body>
+=======
+
+    <script
+      src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js'
+    ></script>
+  </body>
+>>>>>>> a8cddf08bff431b43fe6b571a32647aaa5f0c3e9
+>>>>>>> 0cbc9656093472d401d5d047c57ebe2b3dadcc95
 
 </html>
