@@ -1,0 +1,113 @@
+ {{#with navigation}}
+ <div class="card">
+    <div class='nav nav tabs'>
+      {{#each links}}
+        <div class='nav-item'>
+          <a href='{{href}}' class='{{#if @last}} disabled {{/if}} nav-link'>{{text}}</a>
+        </div>
+      {{/each}}
+    </div>
+    </div>
+  {{/with}}
+
+  <div class="nav nav-tabs">
+    <ol class="breadcrumb my-5">
+      {{#each breadcrumb}}
+      {{#if @last}}
+      <li class="breadcrumb-item active">{{name}}</li>
+      {{else}}
+      <li class="breadcrumb-item"><a href="{{url}}">{{name}}</a></li>
+      {{/if}}
+     
+      {{/each}}
+      </ol>
+  </div>
+
+  {{#with newsData}}
+  <div class="card">
+    <img class="card-img" src="{{photo}}" alt="{{alt}}">
+  </div>
+  {{#with head}}
+  <div class="card">
+    <h2 class="text-center">{{heading}}</h2>
+    <p class="text-center">{{description}}</p>
+ 
+  {{/with}}
+
+  {{#each body}}
+  <h3 class="text-center">{{title}}</h3>
+  <p class="text-center">{{text}}</p>
+  {{/each}}
+   </div>
+  {{/with}}
+  <br>
+  <br>
+  <hr>
+
+
+  {{#with newsOtherBlock}}
+  <h2 class='text-center'>{{title}}</h2>
+  <div class='row'>
+    {{#each cards}}
+      <div class='col-3 mb-3'>
+        <div class='card'>
+         
+          <div class='card-body text-bg-dark'>
+
+            <div class='card-title'>
+              <b>{{title}}</b>
+
+              {{#if isTop}}
+                <span
+                  class='badge rounded-pill text-bg-warning text-uppercase'
+                >TOP!</span>{{/if}}
+              {{#if idNew}}
+                <span
+                  class='badge rounded-pill text-bg-primary'
+                >New!</span>{{/if}}
+            </div>
+            <div>{{description}}</div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+{{/with}}
+
+<br>
+<hr>
+
+{{#with service}}
+  <div class='card m-2'>
+    <div class='text-bg-success text-center'>
+      <h2 class='text-center'>{{title}}</h2>
+      <p class='text-center'>{{description}}</p>
+      {{#each buttons}}
+        <button
+          class='btn btn-primary col-3 text-center m-2'
+        >{{text}}</button>
+      {{/each}}
+    </div>
+  </div>
+
+{{/with}}
+
+<br>
+<hr>
+
+<footer>
+        <div class="row d-3 m-3">
+            <ul class="nav">
+            {{#each footer}}
+            <div class="col-2">
+                {{#each this}}
+                <li class="nav-item">
+                    <a class="nav-link {{#if @last}} disabled {{/if}}" {{#if @last}} {{else}} href="{{link}} {{/if}}">{{text}}</a>
+                </li>
+                {{/each}}
+            </div>
+            {{/each}}
+          </ul>
+        </div>
+     </footer>

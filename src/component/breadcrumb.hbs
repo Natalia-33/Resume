@@ -1,0 +1,14 @@
+<div class='nav nav-tabs'>
+  <ol class='breadcrumb my-5'>
+    {{#each breadcrumb}}
+      {{#if @last}}
+        <li class='breadcrumb-item active'>{{name}}</li>
+      {{else}}
+        <li class='breadcrumb-item'><a
+            href='{{url}}'
+          >{{name}}</a></li>
+      {{/if}}
+
+    {{/each}}
+  </ol>
+</div>
