@@ -7,7 +7,15 @@
 
   <head>
     <title>
+<<<<<<< HEAD
       Shop page
+=======
+<<<<<<< HEAD
+      Shopproduct page
+=======
+      Shophome page
+>>>>>>> 7619faf6f4275219d5c143823599fe69c8a6076e
+>>>>>>> 34c8876e13c7d5d344df2fc68ecfb2fcd65dac61
     </title>
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
@@ -18,12 +26,53 @@
       crossorigin='anonymous'
     />
   </head>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  
+  <body>
+ {{#with navigation}}
+    <div class='nav nav tabs'>
+      {{#each links}}
+        <div class='nav-item'>
+          <a href='{{href}}' class='{{#if @last}} disabled {{/if}} nav-link'>{{text}}</a>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
+    {{{body}}}
+
+    <footer>
+        <div class="row d-3 m-3">
+            <ul class="nav">
+            {{#each footer}}
+            <div class="col-2">
+                {{#each this}}
+                <li class="nav-item">
+                    <a class="nav-link {{#if @last}} disabled {{/if}}" {{#if @last}} {{else}} href="{{link}} {{/if}}">{{text}}</a>
+
+                </li>
+                {{/each}}
+
+            </div>
+            {{/each}}
+    </ul>
+    </div>
+     </footer>
+
+=======
+>>>>>>> 34c8876e13c7d5d344df2fc68ecfb2fcd65dac61
 
   <body>
 
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
     {{{body}}}
 
+<<<<<<< HEAD
+=======
+>>>>>>> 7619faf6f4275219d5c143823599fe69c8a6076e
+>>>>>>> 34c8876e13c7d5d344df2fc68ecfb2fcd65dac61
     <script
       src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js'
     ></script>

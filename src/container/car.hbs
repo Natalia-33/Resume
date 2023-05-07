@@ -1,0 +1,147 @@
+<div>
+  <main>
+    <section>
+     <h1>{{>title big=true data='Toyota Camry 2022'}}</h1> 
+     <p>Color:{{color}}</p>
+    </section>
+    <hr>
+
+    <section>
+      {{>title big=true data='Features'}}
+      {{#with features}}
+      <h4><b>Interior:</b></h4>
+          {{#with interior}}
+            <ul>
+              <li>
+                Seats:{{#with seats}}
+                    {{material}},
+                    {{color}},
+                    ({{#if heated}} heated {{/if}}
+                    {{#if ventilated}} ventilated {{/if}}),
+                  {{/with}}
+              </li>
+            </ul>
+
+            <ul>
+              <li>
+                Dashboard:{{#with dashboard}}
+                    {{material}},
+                    ({{color}}),
+                    {{#with display}}
+                    {{type}},
+                    {{size}},
+                    {{resolution}},
+                   {{#if touchscreen}} touchscreen {{/if}}
+                   {{/with}}
+                  {{/with}}
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                Audio:{{#with audio}}
+                    {{system}},
+                    {{speakers}},
+                   {{#if subwoofer}} subwoofer {{/if}},
+                   {{#if bluetooth}} bluetooth {{/if}},
+                   {{#if USB}} USB {{/if}}
+                  {{/with}}
+                </li>
+              </ul>
+              {{/with}}
+              <h4><b>Exterior:</b></h4>
+            {{#with exterior}}
+              <ul>
+                <li>
+                Wheels:{{#with wheels}}
+                    {{size}},
+                    {{type}},
+                   ({{color}})
+                  {{/with}}
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                Headlights:{{#with headlights}}
+                    {{type}},
+                    {{size}},
+                    {{#if automatic}} automatic {{/if}},
+                  {{/with}}
+                </li>
+              </ul>
+
+               <ul>
+                <li>
+                Sunroof:{{#with sunroof}}
+                    {{type}},
+                    {{size}},
+                    {{#if automatic}} automatic {{/if}},
+                  {{/with}}
+                </li>
+              </ul>
+            {{/with}}
+          <h4><b>Safety:</b></h4>
+          {{#with safety}}
+               <ul>
+                <li>
+                Airbags:{{#with airbags}}
+                    {{#if front}} front {{2}} 2 {{/if}},
+                     {{#if side}} side {{2}} 2 {{/if}},
+                      {{#if knee}} knee {{2}} 2 {{/if}},
+                       {{#if rear}} rear {{2}} 2 {{/if}},
+                   
+                  {{/with}}
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                Assistance:{{#with assistance}}
+                   {{#if blind_spot_monitoring}} blind_spot_monitoring{{/if}},
+                   {{#if rear_cross_traffic_alert}} rear_cross_traffic_alert{{/if}},
+                    {{#if lane_departure_warning}} lane_departure_warning{{/if}},
+                   {{#if adaptive_cruise_control}} adaptive_cruise_control{{/if}},
+                   {{#if collisin_warning}} collisin_warning{{/if}}
+                  {{/with}}
+                </li>
+              </ul>
+                {{/with}}
+          {{/with}}
+
+           {{>title big=true data='Engine'}}
+        
+           <ul>
+            <li>Type:{{engine.type}}</li>
+           <li>Displacement:{{engine.displacement}}</li>
+           <li>Horsepower:{{engine.horsepower}}</li>
+           <li>Torque:{{engine.torque}}</li>
+           <li>Transmission type:{{engine.transmission.type}}</li>
+           <li>Transmission gears:{{engine.transmission.gears}}</li>
+           </ul>
+    
+          {{>title big=true data='Fuel_company'}}
+    
+          <ul>
+            <li>City:{{fuel_company.city}} 28 {{28}}</li>
+           <li>Highway:{{fuel_company.highway}} 39 {{39}}</li>
+           <li>Combined:{{fuel_company.combined}} 32 {{32}}</li>
+           </ul>
+  
+         {{>title big=true data='Price'}}
+          <ul>
+            <li>Base:{{price.base}}</li>
+           <li>Destination:{{price.destination}}</li>
+           <li>Options navigation:{{price.options.navigation}}</li>
+           <li>Options moonroof:{{price.options.moonroof}}</li>
+           <li>Options premium_paint:{{price.options.premium_paint}}</li>
+          </ul>
+
+          {{>title big=true data='Total'}}
+          <ul>
+            <li>Total:{{total}} 28990 {{28990}}</li>
+          </ul>
+  
+    </section>
+  </main>
+</div>
