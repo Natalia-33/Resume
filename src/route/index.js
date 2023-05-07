@@ -229,9 +229,13 @@ router.get('/work', function (req, res) {
   })
 })
 
+// ================================================================
+//              ↙ тут вводимо шлях (PATH) до сторінки
+
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
+    // ↙ сюди вводимо JSON дані
     layout: 'program',
 
     program: {
@@ -315,6 +319,5 @@ router.get('/program', function (req, res) {
 })
 
 // ================================================================
-
 // Підключаємо роутер до бек-енду
 module.exports = router
