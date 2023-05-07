@@ -1,0 +1,142 @@
+<div>
+  <main>
+    <section>
+      {{>title big=true data='Apple MacBook Pro'}}
+      <p>{{description}}</p>
+      <p>Price:{{price}}</p>
+      <p>Category:{{category}}</p>
+   </section>
+   <hr>
+
+   <section>
+    {{>title big=true data='Features'}}
+    {{#with features}}
+      <ul>
+        <li>
+          Processor:{{#with processor}}
+          {{brand}}
+          {{model}}
+          ({{speed}},
+          {{#if cores}} cores {{8}} 8 {{/if}},
+          {{#if cache}} cache {{/if}}
+          {{cache}})
+            {{/with}}
+            </li>
+      </ul>
+
+          <ul>
+            <li>
+              Memory:{{#with memory}}
+              {{type}}
+              {{size}}
+              {{speed}}
+              {{/with}}
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              Storage:{{#with storage}}
+              {{type}}
+              {{size}}
+              {{/with}}
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              Display:{{#with display}}
+              {{size}}
+              {{resolution}}
+               {{technology}},
+                {{color_space}}
+                {{#if color_space}} color_space {{/if}}
+                 {{brightness}}
+                 {{#if brightness}} brightness {{/if}},
+                  {{refresh_rate}}
+                  {{#if refresh_rate}} refresh_rate {{/if}}
+              {{/with}}
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              Graphics:{{#with graphics}}
+              {{brand}}
+              {{model}}
+               {{memory}},
+              {{/with}}
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+          Ports:{{#each ports}}
+            <ul>
+              <li>{{type}} ({{count}})</li>
+            {{#each features}}
+            <ul>
+              <li>{{this}}</li>
+            </ul>
+            {{/each}}
+            </ul>
+          {{/each}}
+          </li>
+            </ul>
+
+        <ul>
+        <li>
+          Battery:{{#with battery}}
+          {{type}}
+          ({{capacity}}
+          {{life}})
+            {{/with}}
+        </li>
+      </ul>
+
+         <ul>
+        <li>
+          Weight:{{#with weight}}
+            {{this}}
+            {{/with}}
+        </li>
+      </ul>
+
+      
+         <ul>
+        <li>
+          Dimensions:{{#with dimensions}}
+            {{height}}
+            {{width}}
+            {{depth}}
+          {{/with}}
+        </li>
+      </ul>
+
+        
+         <ul>
+        <li>
+          Operating system:{{#with operating_system}}
+            {{this}}
+            {{/with}}
+        </li>
+      </ul>
+
+          <ul>
+            <li>
+              Accessories:{{#each accessories}}
+              <ul>
+               <li>
+              {{#if name}} {{name}} - {{else}} {{/if}}
+              {{#if price}} $ {{price}} {{else}} {{/if}}
+
+              </li> 
+              </ul>
+              {{/each}}
+            </li>
+          </ul>
+    {{/with}}
+       
+   </section>
+  </main>
+</div>
