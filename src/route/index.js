@@ -76,8 +76,6 @@ router.get('/summary', function (req, res) {
 
 // ================================================================
 
-// ================================================================
-
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -134,110 +132,250 @@ router.get('/skills', function (req, res) {
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/education', function (req, res) {
+
+router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('education', {
+  res.render('web', {
     // ↙ сюди вводимо JSON дані
 
-    page: {
-      title: 'Resume | Education',
-    },
+    layout: 'web',
 
-    header,
-
-    main: {
-      educations: [
-        { name: 'Ліцей Оріяна', isEnd: true },
-        { name: 'Педагогічний коледж', isEnd: true },
-        { name: 'ЛНУ імені І.Франка', isEnd: true },
+    web: {
+      languages: [
+        {
+          name: 'HTML',
+          version: 'HTML5',
+          description:
+            'Hypertext Markup Language is the standard markup language for creating web pages and web applications.',
+          elements: [
+            {
+              name: 'div',
+              description:
+                'Defines a division or a section in an HTML document.',
+              attributes: [
+                {
+                  name: 'id',
+                  description:
+                    'Specifies a unique id for an HTML element.',
+                },
+                {
+                  name: 'class',
+                  description:
+                    'Specifies one or more class names for an HTML element.',
+                },
+              ],
+            },
+            {
+              name: 'p',
+              description:
+                'Defines a paragraph in an HTML document.',
+              attributes: [
+                {
+                  name: 'id',
+                  description:
+                    'Specifies a unique id for an HTML element.',
+                },
+                {
+                  name: 'class',
+                  description:
+                    'Specifies one or more class names for an HTML element.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'CSS',
+          version: 'CSS3',
+          description:
+            'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in HTML or XML.',
+          properties: [
+            {
+              name: 'color',
+              description: 'Sets the color of the text.',
+              values: [
+                {
+                  value: 'red',
+                  description:
+                    'Sets the text color to red.',
+                },
+                {
+                  value: 'blue',
+                  description:
+                    'Sets the text color to blue.',
+                },
+              ],
+            },
+            {
+              name: 'background-color',
+              description:
+                'Sets the background color of an element.',
+              values: [
+                {
+                  value: 'white',
+                  description:
+                    'Sets the background color to white.',
+                },
+                {
+                  value: 'black',
+                  description:
+                    'Sets the background color to black.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: 'JavaScript',
+          version: 'ES6',
+          description:
+            'JavaScript is a programming language used to create interactive effects within web browsers.',
+          functions: [
+            {
+              name: 'alert()',
+              description:
+                'Displays an alert box with a specified message and an OK button.',
+              parameters: [
+                {
+                  name: 'message',
+                  type: 'string',
+                  description:
+                    'The message to display in the alert box.',
+                },
+              ],
+            },
+            {
+              name: 'getElementById()',
+              description:
+                'Returns the element with the specified ID.',
+              parameters: [
+                {
+                  name: 'id',
+                  type: 'string',
+                  description:
+                    'The ID of the element to find.',
+                },
+              ],
+            },
+          ],
+        },
       ],
-      certificates: [
-        { name: 'IT BRAINS', id: 1234 },
-        { name: 'SSL', id: 5678 },
-        { name: 'EdEra', id: 9876 },
-      ],
     },
-
-    footer,
   })
 })
 
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/work', function (req, res) {
+
+router.get('/car', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('work', {
+
+  res.render('car', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'big',
+    layout: 'car',
 
-    page: {
-      title: 'Resume | Work',
-    },
-
-    header,
-
-    main: {
-      works: [
-        {
-          position: 'Junior Fullstack Developer',
-          company: {
-            name: 'IT BRAINS',
-            url: 'https://it-brains.com.ua/',
-          },
-          duration: {
-            from: '10.10.2022',
-            to: null,
-          },
-          projectAmount: 3,
-
-          projects: [
-            {
-              name: 'Resume',
-              url: 'https://resume.com.ua/',
-              about:
-                'Airbnd competitor. High-load application for searching apartments',
-              stacks: [
-                {
-                  name: 'React.js',
-                },
-                {
-                  name: 'HTML/CSS',
-                },
-                {
-                  name: 'Nodejs',
-                },
-              ],
-              awards: [
-                {
-                  name: 'Background verification - it`s a feature thats provides users to prove that they are real persons',
-                },
-                {
-                  name: 'Prepairing Seo optimized pages. The automated process of getting data for the app fro documents',
-                },
-              ],
-              stackAmount: 5,
-              awardsAmount: 4,
-            },
-          ],
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'silver',
+    features: {
+      interior: {
+        seats: {
+          material: 'leather',
+          color: 'black',
+          heated: true,
+          ventilated: true,
         },
-      ],
+        dashboard: {
+          material: 'plastic',
+          color: 'black',
+          display: {
+            type: 'LCD',
+            size: 10.1,
+            resolution: '1280x720',
+            touchscreen: true,
+          },
+        },
+        audio: {
+          system: 'JBL',
+          speakers: 8,
+          subwoofer: true,
+          bluetooth: true,
+          USB: true,
+        },
+      },
+      exterior: {
+        wheels: {
+          size: 18,
+          type: 'alloy',
+          color: 'silver',
+        },
+        headlights: {
+          type: 'LED',
+          brightness: 'high',
+          automatic: true,
+        },
+        sunroof: {
+          type: 'panoramic',
+          size: 'large',
+          automatic: true,
+        },
+      },
+      safety: {
+        airbags: {
+          front: 2,
+          side: 2,
+          knee: 2,
+          rear: 2,
+        },
+        assistance: {
+          blind_spot_monitoring: true,
+          rear_cross_traffic_alert: true,
+          lane_departure_warning: true,
+          adaptive_cruise_control: true,
+          collision_warning: true,
+        },
+      },
     },
-
-    footer,
+    engine: {
+      type: 'gasoline',
+      displacement: 2.5,
+      horsepower: 206,
+      torque: 186,
+      transmission: {
+        type: 'automatic',
+        gears: 8,
+      },
+    },
+    fuel_economy: {
+      city: 28,
+      highway: 39,
+      combined: 32,
+    },
+    price: {
+      base: 25900,
+      destination: 995,
+      options: {
+        navigation: 1200,
+        moonroof: 800,
+        premium_paint: 595,
+      },
+      total: 28990,
+    },
   })
 })
 
 // ================================================================
 
-// router.get Створює нам один ентпоїнт
+//              ↙ тут вводимо шлях (PATH) до сторінки
 
 router.get('/mac', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('mac', {
+    // ↙ сюди вводимо JSON дані
+
     layout: 'mac',
 
     name: 'Apple MacBook Pro',
@@ -318,7 +456,6 @@ router.get('/mac', function (req, res) {
       ],
     },
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
