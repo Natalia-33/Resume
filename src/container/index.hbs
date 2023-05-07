@@ -3,7 +3,27 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
  }}
 
-<h1>Hello world</h1>
+<div class='row'>
+  <div class='col-6'>Наталя Мельник</div>
+  <div class='col-6'>Resume Project</div>
+</div>
+
+<br />
+<br />
+
+<h2>Список сторінок</h2>
+
+<ul class='nav nav-tabs'>
+  {{#each links}}
+    <li class='nav-item'>
+      <a
+        class='nav-link'
+        target='_blank'
+        href='{{href}}'
+      >{{name}}</a>
+    </li>
+  {{/each}}
+</ul>
 
 {{! 
     Цей код містить лише те, що буде виводитись в <body>

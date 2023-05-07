@@ -247,5 +247,87 @@ router.get('/bootstrap', function (req, res) {
 // Підключаємо роутер до бек-енду
 module.exports = router
 
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'index',
+
+    page: {
+      title: 'Resume | Index',
+    },
+    links: [
+      {
+        name: 'Program',
+        href: '/program',
+      },
+      {
+        name: 'Web',
+        href: '/web',
+      },
+      {
+        name: 'Js',
+        href: '/js',
+      },
+      {
+        name: 'Car',
+        href: '/car',
+      },
+      {
+        name: 'Mac',
+        href: '/mac',
+      },
+      {
+        name: 'Facebook',
+        href: '/facebook',
+      },
+      {
+        name: 'Task21',
+        href: '/task21',
+      },
+      {
+        name: 'Task22',
+        href: '/task22',
+      },
+      {
+        name: 'Task31',
+        href: '/task31',
+      },
+      {
+        name: 'Shophome',
+        href: '/shophome',
+      },
+      {
+        name: 'Shopproduct',
+        href: '/shopproduct',
+      },
+      {
+        name: 'Shopnews',
+        href: '/shopnews',
+      },
+      {
+        name: 'Shoporder',
+        href: '/shoporder',
+      },
+      {
+        name: 'Shopcart',
+        href: '/shopcart',
+      },
+      {
+        name: 'Shopprofile',
+        href: '/shopprofile',
+      },
+      {
+        name: 'Shopcatalog',
+        href: '/shopcatalog',
+      },
+    ],
+  })
+})
+
 // Підключаємо роутер до бек-енду
 module.exports = router
