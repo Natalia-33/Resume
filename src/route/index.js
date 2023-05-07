@@ -131,9 +131,13 @@ router.get('/skills', function (req, res) {
 
 // ================================================================
 
+//              ↙ тут вводимо шлях (PATH) до сторінки
+
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
+    // ↙ сюди вводимо JSON дані
+
     layout: 'web',
 
     web: {
